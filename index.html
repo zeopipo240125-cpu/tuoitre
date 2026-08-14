@@ -593,22 +593,82 @@
                 VỮNG BƯỚC TIẾN VÀO KỶ NGUYÊN MỚI!"
             </p>
             
-            <!-- Nút tương tác và bộ đếm -->
-            <div class="commit-btn-wrapper">
-                <button id="btn-commit" class="btn-commit">
-                    <span>✊</span> TÔI HỨA QUYẾT TÂM
-                </button>
-                <div class="counter-display">
-                    Đã có <span id="commit-counter" class="counter-number">...</span> đồng chí cam kết
-                </div>
-            </div>
+            /* --- KHU VỰC NÚT QUYẾT TÂM --- */
+        .commit-section {
+            text-align: center;
+            margin: 40px auto;
+            padding: 20px;
+        }
 
-            <div class="contact-info">
-                <a href="#" title="Facebook">🌐</a>
-                <a href="#" title="Email">✉️</a>
-                <a href="#" title="Hotline">📞</a>
-            </div>
-        </div>
+        .btn-commit {
+            background: linear-gradient(135deg, #e53935 0%, #c62828 100%); /* Màu đỏ đậm chất quyết tâm */
+            color: #ffffff;
+            font-size: 1.5rem; /* Chữ to */
+            font-weight: bold;
+            font-family: 'Oswald', 'Arial', sans-serif; /* Dùng font cứng cáp */
+            text-transform: uppercase;
+            padding: 15px 40px;
+            border: none;
+            border-radius: 50px; /* Bo tròn mạnh */
+            cursor: pointer;
+            box-shadow: 0 8px 25px rgba(198, 40, 40, 0.5); /* Bóng đổ màu đỏ */
+            transition: all 0.3s ease; /* Hiệu ứng mượt */
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px; /* Khoảng cách giữa icon và chữ */
+            outline: none;
+        }
+
+        /* Hiệu ứng khi rê chuột vào */
+        .btn-commit:hover {
+            transform: translateY(-5px) scale(1.02); /* Bay lên và to ra một chút */
+            box-shadow: 0 12px 30px rgba(198, 40, 40, 0.7); /* Bóng đậm hơn */
+            background: linear-gradient(135deg, #ef5350 0%, #d32f2f 100%); /* Sáng lên */
+        }
+
+        /* Hiệu ứng khi click */
+        .btn-commit:active {
+            transform: translateY(2px) scale(0.98); /* Lún xuống */
+            box-shadow: 0 4px 15px rgba(198, 40, 40, 0.4);
+        }
+
+        /* Trạng thái khi đã bấm (Thành công) */
+        .btn-commit.clicked {
+            background: linear-gradient(135deg, #43a047 0%, #2e7d32 100%); /* Đổi sang màu xanh lá */
+            box-shadow: 0 8px 25px rgba(46, 125, 50, 0.5);
+            pointer-events: none; /* Khóa nút, không cho bấm nữa */
+        }
+
+        /* Phần hiển thị số đếm */
+        .counter-box {
+            margin-top: 25px;
+            font-size: 1.2rem;
+            color: #ffffff;
+            font-family: Arial, sans-serif;
+            background: rgba(0, 0, 0, 0.3); /* Nền đen mờ */
+            display: inline-block;
+            padding: 10px 25px;
+            border-radius: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .counter-number {
+            font-size: 2.2rem;
+            font-weight: 900;
+            color: #ffeb3b; /* Số màu vàng nổi bật */
+            text-shadow: 0 2px 10px rgba(0,0,0,0.8);
+            margin: 0 8px;
+            font-family: 'Oswald', sans-serif;
+        }
+            <div class="commit-section">
+    <button id="btnCommit" class="btn-commit">
+        <span class="icon">✊</span> TÔI HỨA QUYẾT TÂM
+    </button>
+    <div class="counter-box">
+        Đã có <span id="commitCounter" class="counter-number">...</span> đồng chí cam kết
+    </div>
+</div>
     </section>
 
     <!-- JS Libraries -->
